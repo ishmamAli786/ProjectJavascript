@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            #messege{
+                color:green;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function myFun(){
+                var b= /^[A-Za-z]+$/;
+                var a=document.getElementById('user_name').value;
+                if(a==""){
+                    document.getElementById('messege').innerHTML="** PLEASE FILL THE USER NAME";
+                    return false;
+                }
+                if(a.length<3){
+                    document.getElementById('messege').innerHTML="** USERNAME MUST BE GREATER THAN 3 CHRACTER";
+                    return false;
+                }
+                if(a.length>20){
+                    document.getElementById('messege').innerHTML="** USERNAME MUST BE SMALLER THAN 20 CHRACTER";
+                    return false;
+                }
+                if(a.match(b))
+                    true;
+                else{
+                    document.getElementById('messege').innerHTML="** USERNAME MUST BE in alphabatics";
+                    return false;   
+                
+                    
+                }
+            }
+        </script>
+        <form onsubmit="return myFun()">
+            UserName:<input type="text" name="user" value="" id="user_name">
+            <span id="messege"></span><br><br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
